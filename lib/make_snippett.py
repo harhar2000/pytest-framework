@@ -6,7 +6,7 @@ def make_snippet(string):
         return " ".join(words)
 
 
-string = "Hello, where are you going today?"
+string = "This string does have about six words"
 snippet = make_snippet(string)
 print(snippet)
 
