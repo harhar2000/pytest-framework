@@ -166,3 +166,79 @@ def test_find_remind_False():
 
 
 ###### Implement Behaviour 
+
+
+
+____________________________________________________________________________________
+
+
+
+
+###### Describe Problem
+
+As a user
+So that I can keep track of my tasks
+I want a program that I can add todo tasks to and see a list of them
+
+
+
+
+###### Design Function Square
+
+initialise an empty list called #TODO
+strings as entry to list. 
+
+
+
+###### Create Examples as Test
+
+   def_test_empty_list_returns_empty():
+    todo_list = todo_list()
+    result = todo_list()
+    assert return "All tasks complete"
+
+
+   def_test_list_of_one_returns_one():
+    todo_list = todo_list()
+    result = todo_list("Do shopping")
+    assert return "Do shopping"
+
+
+   def_test_list_of_three_returns_three():
+    todo_list = todo_list()
+    result = todo_list("Do Shopping, Read Book, Pick up Child")
+    assert return "Do Shopping, Read Book, Pick up Child"
+
+
+
+###### Implement Behaviour 
+
+
+def todo_list(string):
+    def __init__(self):
+    self.tasks = []
+
+
+    def add_task(self, task):
+        self.tasks.append()
+
+
+
+
+
+
+
+
+
+
+
+###### Describe Problem
+
+
+As a user
+So that I can focus on tasks to complete
+I want to mark tasks as complete and have them disappear from the list.
+
+###### Design Function Square
+###### Create Examples as Test
+###### Implement Behaviour 
