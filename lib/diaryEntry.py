@@ -2,14 +2,13 @@ class DiaryEntry:
     def __init__ (self, title, contents):
         self.title = title
         self.contents = contents
-        self.words = self.contents.split()
-        self.read_pointer = 0
+        
 
     def format(self):
         return f"{self.title}: {self.contents}"
     
     def count_words(self):
-        return len(self.words)
+        return len(self.contents.split())
     
 
     def reading_time(self, wpm):
@@ -32,11 +31,14 @@ class DiaryEntry:
 
 class GrammarStats:
     def __init__(self):
-        pass
+        self.total_texts = 0
+        self.passed_texts = 0
   
     def check(self, text):
         list = [".", "?", "!"]
+        self.total_texts += 1
         if text[0].isupper() and text[-1] in list:
+            self.passed_texts += 1
             return True
         else:
             return False
@@ -48,5 +50,5 @@ class GrammarStats:
             return 0
         ratio = self.passed_texts / self.total_texts
         percentage = ratio * 100
-        rounded_percentage = int(percentage)
-        return rounded_percentage
+   
+        return percentage
