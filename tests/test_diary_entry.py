@@ -1,4 +1,4 @@
-from lib.diaryEntry import DiaryEntry
+from lib.diary_entry import DiaryEntry
 """
 When I initialise with title and contents
 I can get that title and contents back
@@ -24,3 +24,13 @@ then #reading_time with a wpm of 2 should return 3
 def test_reading_time():
     diary_entry = DiaryEntry("My Title", "one two thee four five")
     assert diary_entry.reading_time(2) == 3
+
+"""
+When I initialise with a five-word contents
+Then, at first, #reading_chunk should return the first chunk
+readable in the time
+"""
+
+def test_readable_chunk_first_chunk():
+    diary_entry = DiaryEntry("My Title", "one two three our five")
+    assert diary_entry.reading_chunk(2, 1) == 'one two'

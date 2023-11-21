@@ -1,3 +1,5 @@
+from math import ceil
+
 class DiaryEntry:
     def __init__ (self, title, contents):
         self.title = title
