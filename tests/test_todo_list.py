@@ -1,22 +1,23 @@
-from lib.todo_list import ToDoList
+from lib.todo_list import TodoList
+from lib.todo import Todo
 
-def test_empty_list_returns_empty():
-    todolist = ToDoList()
-    result = todolist.show_tasks()
-    assert result == "All tasks complete"
+def test_incomplete_list_returns_todos_list():
+    todo_list = TodoList()
+    todo1 = Todo("Walk dog")
+    todo2 = Todo("Go swimming")
+    todo_list.add(todo1)
+    todo_list.add(todo2)
+    todo2.mark_complete()
+    assert todo1 in todo_list.incomplete()
+    assert todo2 in todo_list.complete() 
 
+def test_complete_list_returns_complete_todos():
+    todo_list = TodoList()
+    todo1 = Todo("Walk dog")
+    todo2 = Todo("Go swimming")
+    todo_list.add(todo1)
+    todo_list.add(todo2)
+    todo_list.give_up()
+    assert todo1.complete
+    assert todo2.complete 
 
-def test_list_of_one_returns_one():
-    todolist = ToDoList()
-    todolist.add_task("Do shopping")
-    result = todolist.show_tasks()
-    assert result == "Do shopping"
-
-
-def test_list_of_three_returns_three():
-    todolist = ToDoList()
-    todolist.add_task("Do Shopping")
-    todolist.add_task("Read Book")
-    todolist.add_task("Pick up Child")
-    result = todolist.show_tasks()
-    assert result == "Do Shopping\nRead Book\nPick up Child"

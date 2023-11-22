@@ -1,16 +1,18 @@
-class ToDoList():
+class TodoList:
     def __init__(self):
-        self.tasks = []
+        self.todos = []
 
-    def add_task(self, task):
-       self.tasks.append(task)
+    def add(self, todo):
+        self.todos.append(todo)
+    
+      
+    def incomplete(self):
+        return [todo for todo in self.todos if not todo.complete]
+    
+    def complete(self):
+        return [todo for todo in self.todos if todo.complete]
 
-    def show_tasks(self):
-        if not self.tasks:
-            return "All tasks complete"
-        return "\n".join(self.tasks)
+    def give_up(self):
 
-my_list = ToDoList()
-my_list.add_task("Feed fish")
-my_list.add_task("Walk dog")
-print(my_list.show_tasks())
+        for todo in self.todos:
+            todo.complete = True
